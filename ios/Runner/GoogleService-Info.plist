@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>162564554099-mrl41lus9ge690420dbrogr7vprsgblg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.162564554099-mrl41lus9ge690420dbrogr7vprsgblg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>162564554099-iuf0rsrg8dsc2b18a78lhv5vr08qu59e.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD2Co2tw72sqkkvuNuHMaaYsUibxPOFN60</string>
+	<key>GCM_SENDER_ID</key>
+	<string>162564554099</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.heimdalladmin</string>
+	<key>PROJECT_ID</key>
+	<string>heimdall-5aecb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>heimdall-5aecb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:162564554099:ios:a45370919681b809d1d906</string>
+	<key>DATABASE_URL</key>
+	<string>https://heimdall-5aecb-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

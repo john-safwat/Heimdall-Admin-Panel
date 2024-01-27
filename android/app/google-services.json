@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "162564554099",
+    "firebase_url": "https://heimdall-5aecb-default-rtdb.firebaseio.com",
+    "project_id": "heimdall-5aecb",
+    "storage_bucket": "heimdall-5aecb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162564554099:android:b9e5b2719f2b7a36d1d906",
+        "android_client_info": {
+          "package_name": "com.example.heimdall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162564554099-iuf0rsrg8dsc2b18a78lhv5vr08qu59e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.heimdall",
+            "certificate_hash": "72d6dbd30d86b3c3aa86569075cf36e02be50608"
+          }
+        },
+        {
+          "client_id": "162564554099-pcsl0phuqmrvph5t06g3dglpjod1od4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.heimdall",
+            "certificate_hash": "6214666e3cb1a46b4920c0d2ce3aa4467be972cf"
+          }
+        },
+        {
+          "client_id": "162564554099-5p1s2loqgfl0j1nkkcb4vploduigfepo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVWXtVDuqS4RHmzm8ujqrZOhgLTX-nYEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162564554099-5p1s2loqgfl0j1nkkcb4vploduigfepo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "162564554099-ca2mkbkl241jhu28dvurqtcd76697i8k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.heimdall"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162564554099:android:2aa8178e9c75991cd1d906",
+        "android_client_info": {
+          "package_name": "com.example.heimdalladmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162564554099-5p1s2loqgfl0j1nkkcb4vploduigfepo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVWXtVDuqS4RHmzm8ujqrZOhgLTX-nYEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162564554099-5p1s2loqgfl0j1nkkcb4vploduigfepo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "162564554099-ca2mkbkl241jhu28dvurqtcd76697i8k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.heimdall"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
