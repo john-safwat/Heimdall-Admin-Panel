@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:randomstring_dart/randomstring_dart.dart';
 
@@ -19,10 +20,10 @@ class FirebaseImagesDatabase {
   final _firebaseStorage = FirebaseStorage.instance;
 
   // upload image to firebase storage
-  Future<String> uploadImage({required File file})async{
+  Future<String> uploadImage({required Uint8List  file})async{
 
     // upload image to firebase storage
-    var snapshot = await _firebaseStorage.ref().child('images/${generateName()}').putFile(file,  SettableMetadata(contentType: "image/jpeg"));
+    var snapshot = await _firebaseStorage.ref().child('components/${generateName()}').putData(file,  SettableMetadata(contentType: "image/jpeg"));
     // get the image URL from firebase storage
     var downloadUrl = await snapshot.ref.getDownloadURL();
     return downloadUrl;
@@ -30,9 +31,9 @@ class FirebaseImagesDatabase {
 
 
   // upload image to firebase storage
-  Future<String> updateImage({required String url , required File file})async{
+  Future<String> updateImage({required String url , required Uint8List file})async{
     // upload image to firebase storage
-    var snapshot = await _firebaseStorage.refFromURL(url).putFile(file,  SettableMetadata(contentType: "image/jpeg"));
+    var snapshot = await _firebaseStorage.refFromURL(url).putData(file,  SettableMetadata(contentType: "image/jpeg"));
     // get the image URL from firebase storage
     var downloadUrl = await snapshot.ref.getDownloadURL();
     return downloadUrl;

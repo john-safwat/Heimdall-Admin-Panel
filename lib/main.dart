@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget{
       routes: {
         HomeView.routeName : (context) => const HomeView(),
         HardwareView.routeName : (context) => const HardwareView(),
-        AddHardwareView.routeName : (context) => const AddHardwareView()
+        AddHardwareView.routeName : (context) => AddHardwareView()
       },
     );
   }
