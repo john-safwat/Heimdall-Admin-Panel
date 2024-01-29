@@ -1,12 +1,19 @@
 
-import 'package:file_picker/file_picker.dart';
-import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Base/BaseViewModel.dart';
+import 'package:heimdalladmin/Firebase/FirebaseComponentsDatabase.dart';
+import 'package:heimdalladmin/Models/Component.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareNavigator.dart';
 
 class HardwareViewModel extends BaseViewModel<HardwareNavigator> {
 
+  FirebaseComponentsDatabase database = injectFirebaseComponentDatabase();
+  List<Component> components = [];
+
   onFloatingActionButtonPress() {
     navigator!.goToAddComponentScreen();
+  }
+
+  goToAddHardwareScreen(Component component){
+    navigator!.goToAddComponentScreenWithData(component);
   }
 }

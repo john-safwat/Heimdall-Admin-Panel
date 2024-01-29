@@ -1,5 +1,6 @@
 class Component {
 
+  String id;
   String name;
   String description;
   String type;
@@ -7,7 +8,8 @@ class Component {
   double cost;
 
   Component(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.description,
       required this.type,
       required this.image,
@@ -19,6 +21,7 @@ class Component {
       type : json["type"],
       image : json["image"],
       cost : json["cost"],
+      id : json["id"]
   );
 
   Map<String , dynamic> toFireStore(){
@@ -28,6 +31,7 @@ class Component {
       "type" : type,
       "image" : image,
       "cost" : cost,
+      "id" : id
     };
   }
 

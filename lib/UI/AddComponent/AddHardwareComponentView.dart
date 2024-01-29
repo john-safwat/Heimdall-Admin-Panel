@@ -1,8 +1,7 @@
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:heimdalladmin/Base/BaseState.dart';
+import 'package:heimdalladmin/Models/Component.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentNavigator.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentViewModel.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -10,8 +9,9 @@ import 'package:provider/provider.dart';
 
 class AddHardwareView extends StatefulWidget {
   static const String routeName = 'AddHardware';
+  Component? component;
 
-  const AddHardwareView({super.key});
+  AddHardwareView({this.component, super.key});
 
   @override
   State<AddHardwareView> createState() => _AddHardwareViewState();
@@ -20,6 +20,14 @@ class AddHardwareView extends StatefulWidget {
 class _AddHardwareViewState
     extends BaseState<AddHardwareView, AddHardwareComponentViewModel>
     implements AddHardwareComponentNavigator {
+  @override
+  void initState() {
+    super.initState();
+    if (widget.component != null) {
+      viewModel.initControllers(widget.component!);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -48,17 +56,29 @@ class _AddHardwareViewState
                               Uint8List.fromList(viewModel.image!.bytes!),
                               height: double.infinity,
                             )
-                          : Center(
-                              child: Text(
-                              "Pick Image",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .displayMedium!
-                                  .copyWith(
-                                      color: Theme.of(context)
-                                          .scaffoldBackgroundColor,
-                                      fontWeight: FontWeight.bold),
-                            )),
+                          : viewModel.component != null
+                              ? Image.network(
+                                  viewModel.component!.image,
+                                  height: double.infinity,
+                                  fit: BoxFit.contain,
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      const Icon(
+                                    Icons.error,
+                                    color: Colors.red,
+                                    size: 50,
+                                  ),
+                                )
+                              : Center(
+                                  child: Text(
+                                  "Pick Image",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium!
+                                      .copyWith(
+                                          color: Theme.of(context)
+                                              .scaffoldBackgroundColor,
+                                          fontWeight: FontWeight.bold),
+                                )),
                     ),
                   )),
                   const SizedBox(
@@ -66,6 +86,7 @@ class _AddHardwareViewState
                   ),
                   Expanded(
                       child: Form(
+                    key: viewModel.formKey,
                     child: Column(
                       children: [
                         TextFormField(
@@ -110,7 +131,8 @@ class _AddHardwareViewState
                           keyboardType: TextInputType.number,
                           cursorHeight: 20,
                           inputFormatters: [
-                            FilteringTextInputFormatter.allow(RegExp('[0-9,.,-]+')),
+                            FilteringTextInputFormatter.allow(
+                                RegExp('[0-9,.,-]+')),
                           ],
                           decoration: const InputDecoration(
                             hintText: "Cost",
@@ -119,11 +141,13 @@ class _AddHardwareViewState
                         const SizedBox(height: 20),
                         // drop down to select the gender
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 15 , vertical: 2),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 2),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              border: Border.all(width: 2 , color: Theme.of(context).primaryColor)
-                          ),
+                              border: Border.all(
+                                  width: 2,
+                                  color: Theme.of(context).primaryColor)),
                           child: DropdownButton(
                             isExpanded: true,
                             underline: const SizedBox(),
@@ -131,37 +155,44 @@ class _AddHardwareViewState
                             value: value.selectedType,
                             style: Theme.of(context).textTheme.titleMedium,
                             borderRadius: BorderRadius.circular(20),
-                            dropdownColor: Theme.of(context).scaffoldBackgroundColor,
+                            dropdownColor:
+                                Theme.of(context).scaffoldBackgroundColor,
                             // Down Arrow Icon
-                            icon: Icon(EvaIcons.arrow_down , color: Theme.of(context).primaryColor,),
+                            icon: Icon(
+                              EvaIcons.arrow_down,
+                              color: Theme.of(context).primaryColor,
+                            ),
                             // Array list of items
                             items: value.types.map((String items) {
                               return DropdownMenuItem(
                                 value: items,
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 2),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 2),
                                   child: Text(items),
                                 ),
                               );
                             }).toList(),
                             // After selecting the desired option,it will
                             // change button value to selected value
-                            onChanged: (type) => value.changeSelectedType(type??"none"),
+                            onChanged: (type) =>
+                                value.changeSelectedType(type ?? "none"),
                           ),
                         ),
                         const Expanded(child: SizedBox()),
                         ElevatedButton(
-                            onPressed: (){},
-                            child:const Padding(
+                            onPressed: () {
+                              viewModel.onSavePress();
+                            },
+                            child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 15),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Add Component"),
+                                  Text("Save"),
                                 ],
                               ),
-                            )
-                        )
+                            ))
                       ],
                     ),
                   ))
