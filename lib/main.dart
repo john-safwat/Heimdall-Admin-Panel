@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Providers/AppConfigProvider.dart';
 import 'package:heimdalladmin/Theme/MyTheme.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentView.dart';
+import 'package:heimdalladmin/UI/AddModel/AddModelView.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareView.dart';
 import 'package:heimdalladmin/UI/Home/HomeView.dart';
+import 'package:heimdalladmin/UI/Models/LockModelView.dart';
 import 'package:heimdalladmin/firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +40,9 @@ class MyApp extends StatelessWidget{
       routes: {
         HomeView.routeName : (context) => const HomeView(),
         HardwareView.routeName : (context) => const HardwareView(),
-        AddHardwareView.routeName : (context) => AddHardwareView()
+        AddHardwareView.routeName : (context) => AddHardwareView(),
+        LockModelView.routeName : (context) => const LockModelView(),
+        AddModelView.routeName : (context) => AddModelView(),
       },
     );
   }

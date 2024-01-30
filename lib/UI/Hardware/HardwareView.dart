@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Base/BaseState.dart';
-import 'package:heimdalladmin/Models/Component.dart';
+import 'package:heimdalladmin/Models/Component/Component.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentView.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareNavigator.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareViewModel.dart';
-import 'package:heimdalladmin/UI/Hardware/Widget/ComponentCard.dart';
+import 'package:heimdalladmin/UI/Widgets/ComponentCard.dart';
 import 'package:provider/provider.dart';
 
 class HardwareView extends StatefulWidget {

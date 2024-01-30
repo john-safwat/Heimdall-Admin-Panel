@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:heimdalladmin/Base/BaseState.dart';
-import 'package:heimdalladmin/Models/Component.dart';
+import 'package:heimdalladmin/Models/Component/Component.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentNavigator.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentViewModel.dart';
 import 'package:icons_plus/icons_plus.dart';

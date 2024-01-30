@@ -7,4 +7,7 @@ class HomeViewModel extends BaseViewModel <HomeNavigator> {
     navigator!.goToHardwareComponentsScreen();
   }
 
+  goToLockModelScreen(){
+    navigator!.goToLockModelScreen();
+  }
 }
