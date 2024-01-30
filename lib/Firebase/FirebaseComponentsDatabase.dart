@@ -1,6 +1,6 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:heimdalladmin/Models/Component.dart';
+import 'package:heimdalladmin/Models/Component/Component.dart';
 
 
 FirebaseComponentsDatabase injectFirebaseComponentDatabase(){
@@ -36,6 +36,11 @@ class FirebaseComponentsDatabase {
 
   Future<void> updateComponent({required Component component})async{
     await getCollectionReference().doc(component.id).update(component.toFireStore());
+  }
+
+  Future<List<Component>> getComponents ()async {
+    var response = await getCollectionReference().get();
+    return response.docs.map((e) => e.data()).toList();
   }
 
 }

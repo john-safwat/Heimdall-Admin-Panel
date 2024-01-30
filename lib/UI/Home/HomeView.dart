@@ -4,6 +4,7 @@ import 'package:heimdalladmin/Theme/MyTheme.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareView.dart';
 import 'package:heimdalladmin/UI/Home/HomeNavigator.dart';
 import 'package:heimdalladmin/UI/Home/HomeViewModel.dart';
+import 'package:heimdalladmin/UI/Models/LockModelView.dart';
 
 class HomeView extends StatefulWidget {
   static const String routeName = "Home";
@@ -153,7 +154,7 @@ class _HomeViewState extends BaseState<HomeView, HomeViewModel>
                             const SizedBox(width: 20),
                             Expanded(
                                 child: InkWell(
-                              onTap: () {},
+                              onTap: () {viewModel.goToLockModelScreen();},
                               borderRadius: BorderRadius.circular(40),
                               child: Container(
                                 decoration: BoxDecoration(
@@ -205,5 +206,10 @@ class _HomeViewState extends BaseState<HomeView, HomeViewModel>
   @override
   goToHardwareComponentsScreen() {
     Navigator.pushNamed(context, HardwareView.routeName);
+  }
+
+  @override
+  goToLockModelScreen() {
+    Navigator.pushNamed(context, LockModelView.routeName);
   }
 }

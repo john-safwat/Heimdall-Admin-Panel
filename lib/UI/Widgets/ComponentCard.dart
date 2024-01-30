@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heimdalladmin/Models/Component.dart';
+import 'package:heimdalladmin/Models/Component/Component.dart';
 import 'package:heimdalladmin/Theme/MyTheme.dart';
 
 class ComponentCard extends StatelessWidget {

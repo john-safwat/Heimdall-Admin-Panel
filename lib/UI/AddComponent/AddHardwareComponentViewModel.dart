@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Base/BaseViewModel.dart';
 import 'package:heimdalladmin/Firebase/FirebaseComponentsDatabase.dart';
 import 'package:heimdalladmin/Firebase/FirebaseImagesDatabase.dart';
-import 'package:heimdalladmin/Models/Component.dart';
+import 'package:heimdalladmin/Models/Component/Component.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentNavigator.dart';
 
 class AddHardwareComponentViewModel
