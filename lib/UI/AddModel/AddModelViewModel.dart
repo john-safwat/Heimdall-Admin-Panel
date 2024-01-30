@@ -63,6 +63,13 @@ class AddModelViewModel extends BaseViewModel<AddModelNavigator> {
 
   late Component selectedLock;
 
+  initScreenData(Model model){
+    this.model = model;
+    selectedComponents = [];
+    selectedComponents = model.components!;
+    nameController.text = model.name!;
+  }
+
   loadData() async {
     errorMessage = null;
     components = [];
@@ -87,11 +94,13 @@ class AddModelViewModel extends BaseViewModel<AddModelNavigator> {
       selectedKeypad = keypads.first;
       locks = components.where((element) => element.type == "Lock").toList();
       selectedLock = locks.first;
-      selectedComponents.add(selectedBoard);
-      selectedComponents.add(selectedSensor);
-      selectedComponents.add(selectedCamera);
-      selectedComponents.add(selectedKeypad);
-      selectedComponents.add(selectedLock);
+      if(selectedComponents.isEmpty){
+        selectedComponents.add(selectedBoard);
+        selectedComponents.add(selectedSensor);
+        selectedComponents.add(selectedCamera);
+        selectedComponents.add(selectedKeypad);
+        selectedComponents.add(selectedLock);
+      }
       notifyListeners();
     } catch (e) {
       errorMessage = e.toString();
@@ -163,11 +172,19 @@ class AddModelViewModel extends BaseViewModel<AddModelNavigator> {
       return;
     }
 
+    if(model == null){
+      createNewModel();
+    }else {
+      updateModel();
+    }
+
+  }
+
+  createNewModel()async{
     if(image == null){
       navigator!.showMessage(message: "Pleas Pick Image" , posActionTitle: "ok");
       return;
     }
-
     if (formKey.currentState!.validate()){
       try {
         navigator!.showLoading(message: "Loading ...");
@@ -188,7 +205,27 @@ class AddModelViewModel extends BaseViewModel<AddModelNavigator> {
         navigator!.showMessage(message: e.toString(), posActionTitle: "ok");
       }
     }
+  }
 
+  updateModel()async{
+    if (formKey.currentState!.validate()){
+      try {
+        navigator!.showLoading(message: "Loading ...");
+        String url = "";
+        if (image != null) {
+          url = await imagesDatabase.uploadImage(file: image!.bytes!);
+          model!.image = url;
+        }
+        model!.name = nameController.text;
+        model!.components = selectedComponents;
+        await modelsDatabase.updateModel(model: model!);
+        navigator!.goBack();
+        navigator!.showMessage(message: "Model Updated Successfully", posActionTitle: "ok" , posAction: goBack);
+      } catch (e) {
+        navigator!.goBack();
+        navigator!.showMessage(message: e.toString(), posActionTitle: "ok");
+      }
+    }
   }
 
   goBack(){navigator!.goBack();}
