@@ -25,10 +25,12 @@ class AddModelView extends StatefulWidget {
 class _AddModelViewState extends BaseState<AddModelView, AddModelViewModel>
     implements AddModelNavigator {
   @override
-  void initState() {
+  void initState(){
     super.initState();
-    viewModel.model = widget.model;
     viewModel.loadData();
+    if(widget.model!= null){
+      viewModel.initScreenData(widget.model!);
+    }
   }
 
   @override
