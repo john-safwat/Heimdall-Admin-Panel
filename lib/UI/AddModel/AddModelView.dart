@@ -2,14 +2,11 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Base/BaseState.dart';
-import 'package:heimdalladmin/Models/Component/Component.dart';
 import 'package:heimdalladmin/Models/Model/Model.dart';
-import 'package:heimdalladmin/Theme/MyTheme.dart';
 import 'package:heimdalladmin/UI/AddModel/AddModelNavigator.dart';
 import 'package:heimdalladmin/UI/AddModel/AddModelViewModel.dart';
 import 'package:heimdalladmin/UI/Widgets/ComponentCard.dart';
 import 'package:heimdalladmin/UI/Widgets/ComponentSelect.dart';
-import 'package:heimdalladmin/UI/Widgets/DropDownComponent.dart';
 import 'package:provider/provider.dart';
 
 class AddModelView extends StatefulWidget {

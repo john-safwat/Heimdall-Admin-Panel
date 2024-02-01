@@ -5,6 +5,7 @@ import 'package:heimdalladmin/UI/Hardware/HardwareView.dart';
 import 'package:heimdalladmin/UI/Home/HomeNavigator.dart';
 import 'package:heimdalladmin/UI/Home/HomeViewModel.dart';
 import 'package:heimdalladmin/UI/Models/LockModelView.dart';
+import 'package:heimdalladmin/UI/RegisterLock/RegisterLockView.dart';
 
 class HomeView extends StatefulWidget {
   static const String routeName = "Home";
@@ -74,7 +75,7 @@ class _HomeViewState extends BaseState<HomeView, HomeViewModel>
                         // card of register new lock data
                         Expanded(
                             child: InkWell(
-                          onTap: () {},
+                          onTap: () {viewModel.goToRegisterLockScreen();},
                           borderRadius: BorderRadius.circular(40),
                           child: Container(
                             decoration: BoxDecoration(
@@ -211,5 +212,10 @@ class _HomeViewState extends BaseState<HomeView, HomeViewModel>
   @override
   goToLockModelScreen() {
     Navigator.pushNamed(context, LockModelView.routeName);
+  }
+
+  @override
+  goToRegisterLockScreen() {
+    Navigator.pushNamed(context, RegisterLockView.routeName);
   }
 }

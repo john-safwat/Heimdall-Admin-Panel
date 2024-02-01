@@ -10,4 +10,8 @@ class HomeViewModel extends BaseViewModel <HomeNavigator> {
   goToLockModelScreen(){
     navigator!.goToLockModelScreen();
   }
+  goToRegisterLockScreen(){
+    navigator!.goToRegisterLockScreen();
+  }
+
 }

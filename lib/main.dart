@@ -8,6 +8,7 @@ import 'package:heimdalladmin/UI/AddModel/AddModelView.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareView.dart';
 import 'package:heimdalladmin/UI/Home/HomeView.dart';
 import 'package:heimdalladmin/UI/Models/LockModelView.dart';
+import 'package:heimdalladmin/UI/RegisterLock/RegisterLockView.dart';
 import 'package:heimdalladmin/firebase_options.dart';
 import 'package:provider/provider.dart';
 
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget{
         AddHardwareView.routeName : (context) => AddHardwareView(),
         LockModelView.routeName : (context) => const LockModelView(),
         AddModelView.routeName : (context) => AddModelView(),
+        RegisterLockView.routeName : (context) => const RegisterLockView()
       },
     );
   }
