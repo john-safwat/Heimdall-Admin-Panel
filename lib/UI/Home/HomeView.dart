@@ -4,6 +4,7 @@ import 'package:heimdalladmin/Theme/MyTheme.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareView.dart';
 import 'package:heimdalladmin/UI/Home/HomeNavigator.dart';
 import 'package:heimdalladmin/UI/Home/HomeViewModel.dart';
+import 'package:heimdalladmin/UI/Locks/LocksView.dart';
 import 'package:heimdalladmin/UI/Models/LockModelView.dart';
 import 'package:heimdalladmin/UI/RegisterLock/RegisterLockView.dart';
 
@@ -120,7 +121,7 @@ class _HomeViewState extends BaseState<HomeView, HomeViewModel>
                           children: [
                             Expanded(
                                 child: InkWell(
-                              onTap: () {},
+                              onTap: () {viewModel.goToLocksScreen();},
                               borderRadius: BorderRadius.circular(40),
                               child: Container(
                                 padding: const EdgeInsets.all(50),
@@ -217,5 +218,10 @@ class _HomeViewState extends BaseState<HomeView, HomeViewModel>
   @override
   goToRegisterLockScreen() {
     Navigator.pushNamed(context, RegisterLockView.routeName);
+  }
+
+  @override
+  goToLocksScreen() {
+    Navigator.pushNamed(context, LocksView.routeName);
   }
 }

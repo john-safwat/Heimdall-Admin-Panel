@@ -31,7 +31,7 @@ class RegisterLockViewModel extends BaseViewModel<RegisterLockNavigator>{
     models = [];
     notifyListeners();
     try{
-      models = await modelsDatabase.getModel();
+      models = await modelsDatabase.getModels();
       selectedModel = models.first;
       notifyListeners();
     }catch (e){

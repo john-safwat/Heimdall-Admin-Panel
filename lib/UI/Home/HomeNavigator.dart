@@ -5,6 +5,7 @@ abstract class HomeNavigator extends BaseNavigator{
   goToHardwareComponentsScreen();
   goToLockModelScreen();
   goToRegisterLockScreen();
+  goToLocksScreen();
 
 
 }

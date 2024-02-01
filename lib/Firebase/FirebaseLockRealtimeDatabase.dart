@@ -22,4 +22,9 @@ class FirebaseLockRealtimeDatabase {
      });
   }
 
+  Future<void> deleteLock({required String id})async{
+    DatabaseReference firebaseStorage = FirebaseDatabase.instance.ref("Locks/$id");
+    await firebaseStorage.remove();
+  }
+
 }

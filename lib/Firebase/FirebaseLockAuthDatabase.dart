@@ -26,5 +26,9 @@ class FirebaseLockAuthDatabase{
     return _firebase.currentUser!;
   }
 
+  Future<void>deleteAccount({required Lock lock})async{
+    var response = await _firebase.signInWithEmailAndPassword(email: lock.email, password: lock.password);
+    await response.user!.delete();
+  }
 
 }
