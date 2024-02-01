@@ -36,7 +36,7 @@ class  FirebaseModelsDatabase{
     await getCollectionReference().doc(model.id).update(model.toFireStore());
   }
 
-  Future<List<Model>> getModel ()async {
+  Future<List<Model>> getModels ()async {
     var response = await getCollectionReference().get();
     return response.docs.map((e) => e.data()).toList();
   }
