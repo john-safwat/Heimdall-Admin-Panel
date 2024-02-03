@@ -18,7 +18,8 @@ class FirebaseLockRealtimeDatabase {
   Future<void> addLockToDatabase({required String id})async{
      DatabaseReference firebaseStorage = FirebaseDatabase.instance.ref("Locks/$id");
      await firebaseStorage.set({
-       "opened" : false
+       "opened" : false,
+       "lastImage" : ""
      });
   }
 
