@@ -19,7 +19,8 @@ class FirebaseLockRealtimeDatabase {
      DatabaseReference firebaseStorage = FirebaseDatabase.instance.ref("Locks/$id");
      await firebaseStorage.set({
        "opened" : false,
-       "lastImage" : ""
+       "lastImage" : "",
+       "password":"1234"
      });
   }
 
