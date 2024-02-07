@@ -1,6 +1,6 @@
 import 'package:heimdalladmin/Base/BaseNavigator.dart';
 
-abstract class HomeNavigator extends BaseNavigator{
+abstract class HomeTabNavigator extends BaseNavigator{
 
   goToHardwareComponentsScreen();
   goToLockModelScreen();
