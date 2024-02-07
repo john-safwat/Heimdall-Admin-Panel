@@ -8,6 +8,7 @@ import 'package:heimdalladmin/Firebase/FirebaseModelsDatabase.dart';
 import 'package:heimdalladmin/Models/Lock/Lock.dart';
 import 'package:heimdalladmin/Models/Model/Model.dart';
 import 'package:heimdalladmin/UI/RegisterLock/RegisterLockNavigator.dart';
+import 'package:randomstring_dart/randomstring_dart.dart';
 
 class RegisterLockViewModel extends BaseViewModel<RegisterLockNavigator>{
 
@@ -25,7 +26,7 @@ class RegisterLockViewModel extends BaseViewModel<RegisterLockNavigator>{
 
 
   loadData()async{
-    emailController.text = "@heimdall.com";
+    emailController.text = "${createRandomNumber()}@heimdall.com";
     passwordController.text = "123123123";
     errorMessage = null ;
     models = [];
@@ -38,6 +39,18 @@ class RegisterLockViewModel extends BaseViewModel<RegisterLockNavigator>{
       errorMessage = e.toString();
       notifyListeners();
     }
+  }
+
+  // function to add random string
+  String createRandomNumber(){
+    return RandomString().getRandomString(
+        lowersCount: 0 ,
+        numbersCount: 10,
+        specialsCount: 0,
+        uppersCount: 0,
+        canSpecialRepeat: false,
+        specials: "",
+    );
   }
 
   // validation functions

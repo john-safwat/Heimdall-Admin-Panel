@@ -6,6 +6,7 @@ import 'package:heimdalladmin/Theme/MyTheme.dart';
 import 'package:heimdalladmin/UI/AddComponent/AddHardwareComponentView.dart';
 import 'package:heimdalladmin/UI/AddModel/AddModelView.dart';
 import 'package:heimdalladmin/UI/Hardware/HardwareView.dart';
+import 'package:heimdalladmin/UI/Home/HomeTab/HomeTabView.dart';
 import 'package:heimdalladmin/UI/Home/HomeView.dart';
 import 'package:heimdalladmin/UI/Locks/LocksView.dart';
 import 'package:heimdalladmin/UI/Models/LockModelView.dart';
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget{
       initialRoute: HomeView.routeName,
       theme: MyTheme.theme,
       routes: {
-        HomeView.routeName : (context) => const HomeView(),
+        HomeView.routeName : (context) => HomeView(),
+        HomeTabView.routeName : (context) => const HomeTabView(),
         HardwareView.routeName : (context) => const HardwareView(),
         AddHardwareView.routeName : (context) => AddHardwareView(),
         LockModelView.routeName : (context) => const LockModelView(),

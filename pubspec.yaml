@@ -44,6 +44,8 @@ dependencies:
   firebase_database: ^10.4.1
   randomstring_dart: ^0.0.4
   qr_flutter: ^4.1.0
+  side_navigation: ^1.0.4
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

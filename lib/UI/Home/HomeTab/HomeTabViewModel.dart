@@ -1,7 +1,7 @@
 import 'package:heimdalladmin/Base/BaseViewModel.dart';
-import 'package:heimdalladmin/UI/Home/HomeNavigator.dart';
+import 'package:heimdalladmin/UI/Home/HomeTab/HomeTabNavigator.dart';
 
-class HomeViewModel extends BaseViewModel <HomeNavigator> {
+class HomeTabViewModel extends BaseViewModel <HomeTabNavigator> {
 
   goToHardwareComponentsScreen(){
     navigator!.goToHardwareComponentsScreen();
