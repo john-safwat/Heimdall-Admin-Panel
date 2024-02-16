@@ -1,7 +1,7 @@
 import 'package:heimdalladmin/Base/BaseViewModel.dart';
 import 'package:heimdalladmin/Firebase/FirebaseFeedbackDatabase.dart';
 import 'package:heimdalladmin/Models/Feedback/Feedback.dart';
-import 'package:heimdalladmin/UI/Home/Reports/FeedbacksNavigator.dart';
+import 'package:heimdalladmin/UI/Home/Feedbacks/FeedbacksNavigator.dart';
 
 class FeedbacksViewModel extends BaseViewModel<FeedbacksNavigator> {
 

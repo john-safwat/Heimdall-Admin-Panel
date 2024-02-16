@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Theme/MyTheme.dart';
+import 'package:heimdalladmin/UI/Home/Feedbacks/FeedbacksView.dart';
 import 'package:heimdalladmin/UI/Home/HomeTab/HomeTabView.dart';
-import 'package:heimdalladmin/UI/Home/Reports/FeedbacksView.dart';
+import 'package:heimdalladmin/UI/Home/Reports/ReportsView.dart';
 import 'package:side_navigation/side_navigation.dart';
 
 class HomeView extends StatefulWidget {
@@ -16,7 +17,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
 
-  List<Widget> tabs = const [HomeTabView() , FeedbacksView()];
+  List<Widget> tabs = const [HomeTabView() , FeedbacksView() , ReportsView()];
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,10 @@ class _HomeViewState extends State<HomeView> {
                 SideNavigationBarItem(
                   icon: Icons.star_rounded,
                   label: 'Feedback',
+                ),
+                SideNavigationBarItem(
+                  icon: Icons.message,
+                  label: 'Reports',
                 ),
               ],
               theme: SideNavigationBarTheme(
@@ -56,6 +61,10 @@ class _HomeViewState extends State<HomeView> {
                   expandIconColor: MyTheme.cafe,
                   shrinkIconColor: MyTheme.cafe
                 )
+              ),
+              toggler:const SideBarToggler(
+                expandIcon: Icons.arrow_forward_ios,
+                shrinkIcon: Icons.arrow_back_ios
               ),
               onTap: (index) {
                 setState(() {
