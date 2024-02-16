@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:heimdalladmin/Base/BaseState.dart';
-import 'package:heimdalladmin/UI/Home/Reports/FeedbacksNavigator.dart';
-import 'package:heimdalladmin/UI/Home/Reports/FeedbacksViewModel.dart';
-import 'package:heimdalladmin/UI/Home/Reports/Widgets/FeedbackCard.dart';
+import 'package:heimdalladmin/UI/Home/Feedbacks/FeedbacksNavigator.dart';
+import 'package:heimdalladmin/UI/Home/Feedbacks/FeedbacksViewModel.dart';
+import 'package:heimdalladmin/UI/Home/Feedbacks/Widgets/FeedbackCard.dart';
 import 'package:provider/provider.dart';
 
 class FeedbacksView extends StatefulWidget {
