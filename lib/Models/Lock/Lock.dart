@@ -5,7 +5,8 @@ class Lock {
       required this.password,
       required this.firstOwner,
       required this.model,
-      required this.createdAt});
+      required this.createdAt,
+      required this.images});
 
   Lock.fromJson(dynamic json)
       : this(
@@ -15,6 +16,7 @@ class Lock {
           firstOwner: json['firstOwner'],
           model: json['model'],
           createdAt: json["createdAt"],
+          images:json["images"]
         );
   String id;
   String email;
@@ -22,6 +24,7 @@ class Lock {
   String firstOwner;
   int createdAt;
   String model;
+  List<String> images= [];
 
   Map<String, dynamic> toJson() {
     return {
@@ -31,6 +34,7 @@ class Lock {
       'firstOwner': firstOwner,
       'model': model,
       "createdAt": createdAt,
+      "images" : images
     };
   }
 }

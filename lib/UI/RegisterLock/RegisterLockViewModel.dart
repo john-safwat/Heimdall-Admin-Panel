@@ -93,7 +93,8 @@ class RegisterLockViewModel extends BaseViewModel<RegisterLockNavigator>{
             password: passwordController.text,
             firstOwner: "",
             model: selectedModel.id!,
-            createdAt: DateTime.now().millisecondsSinceEpoch);
+            createdAt: DateTime.now().millisecondsSinceEpoch,
+            images: []);
 
         User response = await authDatabase.createLock(lock: lock);
         lock.id = response.uid;
