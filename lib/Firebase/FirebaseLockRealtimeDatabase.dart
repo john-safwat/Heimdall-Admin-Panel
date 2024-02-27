@@ -20,7 +20,9 @@ class FirebaseLockRealtimeDatabase {
      await firebaseStorage.set({
        "opened" : false,
        "lastImage" : "",
-       "password":"1234"
+       "password":"1234",
+       "y1_value" : "0",
+       "y2_value" : "0"
      });
   }
 
