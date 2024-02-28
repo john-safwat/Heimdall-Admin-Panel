@@ -22,7 +22,8 @@ class FirebaseLockRealtimeDatabase {
        "lastImage" : "",
        "password":"1234",
        "y1_value" : "0",
-       "y2_value" : "0"
+       "y2_value" : "0",
+       "request_update" : false
      });
   }
 
