@@ -8,23 +8,28 @@ class Lock {
       required this.createdAt,
       required this.images});
 
-  Lock.fromJson(dynamic json)
-      : this(
-          id: json['id'],
-          email: json['email'],
-          password: json['password'],
-          firstOwner: json['firstOwner'],
-          model: json['model'],
-          createdAt: json["createdAt"],
-          images:json["images"]
-        );
-  String id;
-  String email;
-  String password;
-  String firstOwner;
-  int createdAt;
-  String model;
-  List<String> images= [];
+  Lock.fromJson(dynamic json){
+    id = json['id'];
+    email = json['email'];
+    password = json['password'];
+    firstOwner = json['firstOwner'];
+    model = json['model'];
+    createdAt = json["createdAt"];
+    if (json['images'] != null) {
+      images = [];
+      json['images'].forEach((v) {
+        images.add((v as String));
+      });
+    }
+  }
+
+  late String id;
+  late String email;
+  late String password;
+  late String firstOwner;
+  late int createdAt;
+  late String model;
+  late List<String> images= [];
 
   Map<String, dynamic> toJson() {
     return {
