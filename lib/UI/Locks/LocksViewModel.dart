@@ -25,6 +25,7 @@ class LocksViewModel extends BaseViewModel<LocksNavigator> {
       notifyListeners();
     } catch (e) {
       errorMessage = e.toString();
+      print(e);
       notifyListeners();
     }
   }

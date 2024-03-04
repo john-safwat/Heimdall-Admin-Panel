@@ -25,7 +25,8 @@ class FirebaseLockRealtimeDatabase {
        "y2_value" : 0,
        "x1_value" : 0,
        "x2_value" : 640,
-       "request_update" : false
+       "request_update" : false,
+       "alert_duration" : 300
      });
   }
 
